@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Transparent Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/newFile.css">
+</head>
+<body>
+	<div class="header-w3l">
+		<h1> 登录</h1>
+	</div>
+	<div class="main-content-agile">
+		<div class="sub-main-w3">	
+			<input placeholder="Username or E-mail" name="username" class="user" type="text" required=""><br>
+			<input  placeholder="Password" name="password" class="pass" type="password" required=""><br>
+			<input type="button" value="" class="btn-block">
+			<!-- <button class="btn btn-theme btn-block"><i class="fa fa-lock"></i> 注册</button> -->
+		</div>
+	</div>
+	<canvas id="canvas1"></canvas>
+	<canvas id="canvas2"></canvas>
+	<canvas id="canvas3"></canvas>
+	<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/newFile.js"></script>
+	<script src="js/common.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('body').on('click', '.btn-block', function(){
+				var oData = {
+					username: $("input[name='username']").val(),
+					password: $("input[name='password']").val()
+				}
+				common.ajax('/lee/usertable/login', 'POST', oData, function(res){
+					console.log(res);
+					 if(res.success){
+               		 window.location.href = '';
+             		 }
+				});
+			});
+		});
+	</script>
+</body>
+</html>
