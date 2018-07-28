@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>我们</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Transparent Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="all"/>
 <link rel="stylesheet" type="text/css" href="css/newFile.css">
 </head>
 <body>
@@ -15,10 +15,10 @@
 	</div>
 	<div class="main-content-agile">
 		<div class="sub-main-w3">	
-			<input placeholder="Username or E-mail" name="username" class="user" type="text" required=""><br>
+			<input placeholder="Username" name="username" class="user" type="text" required=""><br>
 			<input  placeholder="Password" name="password" class="pass" type="password" required=""><br>
 			<input type="button" value="" class="btn-block">
-			<!-- <button class="btn btn-theme btn-block"><i class="fa fa-lock"></i> 注册</button> -->
+			<!-- <button class="btn btn-theme btn-block"><i class="fa fa-lock"></i> 注册</button>  -->
 		</div>
 	</div>
 	<canvas id="canvas1"></canvas>
@@ -37,8 +37,10 @@
 				common.ajax('/lee/usertable/login', 'POST', oData, function(res){
 					console.log(res);
 					 if(res.success){
-               		 window.location.href = '';
-             		 }
+						window.location.href = 'index.html';
+             		 }else{
+						alert(res.message);
+					 }
 				});
 			});
 		});

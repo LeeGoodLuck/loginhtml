@@ -1,7 +1,7 @@
 (function(){
 	var common = {
 		url: function(){
-			return 'http://192.168.0.125:16655'
+			return 'http://192.168.1.102:16655'
 		},
 		ajax: function(url, type, data, callback){
 			$.ajax({
@@ -9,7 +9,7 @@
 				type: type,
 				data: data,
 				success: function(result){
-					callback(result)
+					callback(result);
 				},
 				error: function(reject){
 					try{

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>我们</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!---//webfonts--->  
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+</head>
+<body id="login">
+  <div class="login-logo">
+    <img src="images/logo.png" alt=""/>
+  </div>
+  <!-- <h2 class="form-heading">Register</h2> -->
+  <form class="form-signin app-cam" action="index.html">
+      <p>请输入您的帐户详细信息</p>
+      <input type="text" class="form-control1" name="username" placeholder="昵称" autofocus="">
+      <input type="password" class="form-control1" name="password" placeholder="密码">
+      <input type="password" class="form-control1" name="twopassword" placeholder="确认密码">
+     <!--  <input type="text" class="form-control1" placeholder="城市/县" autofocus=""> -->
+      <div class="radios">
+        <label for="radio-01" class="label_radio">
+            <input type="radio" name="sex" checked="" value="1"> 男
+        </label>
+        <label for="radio-02" class="label_radio">
+            <input type="radio" name="sex" value="2"> 女
+        </label>
+	  </div>
+	  <p>  </p>
+     <!--  <input type="text" class="form-control1" placeholder="姓名" autofocus=""> -->
+      <input type="text" class="form-control1" name="address" placeholder="地址" autofocus="">
+      <input type="text" class="form-control1" name="email" placeholder="邮箱" autofocus="">
+    <!--   <label class="checkbox-custom check-success">
+          <input type="checkbox" value="agree this condition" id="checkbox1"> <label for="checkbox1">我同意服务条款和隐私政策。</label>
+      </label> -->
+      <input type="button" value="提交" class="btn btn-lg btn-success1 btn-block">
+    <!--   <button class="btn btn-lg btn-success1 btn-block" type="button"></button> -->
+      <div class="registration">
+        已注册,
+          <a class="" href="login.html">
+            登录
+          </a>
+      </div>
+  </form>
+   <div class="copy_layout login register">
+      <p>Copyright &copy; 2018.Company name All rights reserved.</a></p>
+   </div>
+   <script src="js/common.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('body').on('click', '.btn-block', function(){
+        var oData = {
+          username: $("input[name='username']").val(),
+          password: $("input[name='password']").val(),
+          twopassword: $("input[name='twopassword']").val(),
+          sex: $("input[name='sex']").val(),
+          address: $("input[name='address']").val(),
+          email: $("input[name='email']").val()
+        }
+        common.ajax('/lee/usertable/register', 'POST', oData, function(res){
+          console.log(res);
+           if(res.success){
+            window.location.href = 'login.html';
+            }else{
+             alert(res.message);
+           }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
